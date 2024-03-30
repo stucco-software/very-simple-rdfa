@@ -1,3 +1,7 @@
+# Very Simple RDFa
+
+A very simple primer on how RDFa works and can be used to do cool stuff.
+
 ## Usage
 
 Start static server on `/html`
