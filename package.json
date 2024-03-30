@@ -1,0 +1,25 @@
+{
+  "name": "rdfa-viz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "prestart": "npm run example",
+    "start": "http-server ./html -p 8888",
+    "build": "node index.js",
+    "example": "origin=http://localhost:8888 node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^24.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

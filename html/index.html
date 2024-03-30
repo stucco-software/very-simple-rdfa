@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RDFa Visualizer</title>
+  <script async="" defer="" type="module" src="/lib/index.js"></script>
+  <script async="" defer="" type="module" src="/lib/table-of-contents.js"></script>
+  <script async="" defer="" type="module" src="/lib/write-json-ld.js"></script>
+</head>
+
+<body>
+  <h1>RDFa Visualizer</h1>
+
+  <h2>
+    Start with HyperText.
+  </h2>
+
+  <p>Here is a pile of HTML files, all in a list. They link to each other and it's pretty cool. Each link has a <code>rel</code> or <code>property</code> attribute that defines the nature of the link – that is, what kind of relationship it is.</p>
+
+  <rdfa-toc></rdfa-toc>
+
+  <h2>
+    Convert hyper-text to JSON-LD via RDFa.
+  </h2>
+
+  <p>
+    That <code>rel</code> or <code>property</code> attribute is RDFa microdata. This can be scraped out of the HTML and turned into a JSON-LD object:
+  </p>
+
+  <rdfa-write-jsonld></rdfa-write-jsonld>
+
+  <h2>
+    Use JSON-LD for good.
+  </h2>
+
+  <p>Using the very helpful <a href="https://github.com/digitalbazaar/jsonld.js">jsonld.js</a> package, we can transform that JSON-LD object into all sorts of useful things.</p>
+
+  <p>
+    <mark>More on this soon.</mark>
+  </p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+{
+  "@context": "http://localhost:8888/context.json",
+  "@graph": [
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/cat",
+      "ex:title": "Cat",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": [
+        "http://localhost:8888/human",
+        "http://localhost:8888/dog"
+      ],
+      "ex:chase": "http://localhost:8888/mouse"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/dog",
+      "ex:title": "Dog",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": [
+        "http://localhost:8888/cat",
+        "http://localhost:8888/human",
+        "http://localhost:8888/horse",
+        "http://localhost:8888/duck"
+      ],
+      "ex:chase": [
+        "http://localhost:8888/cat",
+        "http://localhost:8888/cat"
+      ]
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/duck",
+      "ex:title": "Duck",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": "http://localhost:8888/goose"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/goose",
+      "ex:title": "Goose",
+      "ex:size": "http://localhost:8888/lorg",
+      "ex:chase": "http://localhost:8888/human"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/horse",
+      "ex:title": "Horse",
+      "ex:size": "http://localhost:8888/lorg",
+      "ex:fren": "http://localhost:8888/human"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/human",
+      "ex:title": "Human",
+      "ex:fren": [
+        "http://localhost:8888/cat",
+        "http://localhost:8888/dog",
+        "http://localhost:8888/duck",
+        "http://localhost:8888/horse"
+      ]
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/index"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/lorg",
+      "ex:title": "Large"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/mouse",
+      "ex:title": "Mouse",
+      "ex:size": "http://localhost:8888/smol"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/smol",
+      "ex:title": "Small"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/squirrel",
+      "ex:title": "Squirrel",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": [
+        "http://localhost:8888/duck",
+        "http://localhost:8888/goose"
+      ]
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/vocabulary",
+      "ex:title": "Vocabulary"
+    }
+  ]
+}

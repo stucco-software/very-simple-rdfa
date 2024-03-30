@@ -1,0 +1,84 @@
+{
+  "@context": "http://localhost:8888/context.json",
+  "@graph": [
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/cat",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": [
+        "http://localhost:8888/human",
+        "http://localhost:8888/dog"
+      ],
+      "ex:chase": "http://localhost:8888/mouse"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/dog",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": [
+        "http://localhost:8888/cat",
+        "http://localhost:8888/human",
+        "http://localhost:8888/horse",
+        "http://localhost:8888/duck"
+      ],
+      "ex:chase": [
+        "http://localhost:8888/cat",
+        "http://localhost:8888/cat"
+      ]
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/duck",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": "http://localhost:8888/goose"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/goose",
+      "ex:size": "http://localhost:8888/lorg",
+      "ex:chase": "http://localhost:8888/human"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/horse",
+      "ex:size": "http://localhost:8888/lorg",
+      "ex:fren": "http://localhost:8888/human"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/human",
+      "ex:fren": [
+        "http://localhost:8888/cat",
+        "http://localhost:8888/dog",
+        "http://localhost:8888/duck",
+        "http://localhost:8888/horse"
+      ]
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/lorg"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/mouse",
+      "ex:size": "http://localhost:8888/smol"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/smol"
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/squirrel",
+      "ex:size": "http://localhost:8888/smol",
+      "ex:fren": [
+        "http://localhost:8888/duck",
+        "http://localhost:8888/goose"
+      ]
+    },
+    {
+      "@type": "ex:Thing",
+      "@id": "http://localhost:8888/vocabulary"
+    }
+  ]
+}
