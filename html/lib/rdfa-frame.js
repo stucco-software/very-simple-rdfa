@@ -1,7 +1,6 @@
 
-const frame = {}
 
-class WriteJSONLD extends HTMLElement {
+class FrameJSONLD extends HTMLElement {
   constructor() {
     super()
   }
@@ -12,10 +11,7 @@ class WriteJSONLD extends HTMLElement {
 
     const parser = new DOMParser()
     const template = `
-      <details>
-        <summary>Show Code</summary>
-<code><pre>${JSON.stringify(data, null, 2)}</pre></code>
-      </details>
+      <mark>neat</mark>
     `
     let html = parser
       .parseFromString(template, "text/html")
@@ -23,4 +19,4 @@ class WriteJSONLD extends HTMLElement {
   }
 }
 
-customElements.define("rdfa-write-jsonld", WriteJSONLD)
+customElements.define("rdfa-frame", FrameJSONLD)

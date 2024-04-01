@@ -7,6 +7,9 @@
   <script async="" defer="" type="module" src="/lib/index.js"></script>
   <script async="" defer="" type="module" src="/lib/table-of-contents.js"></script>
   <script async="" defer="" type="module" src="/lib/write-json-ld.js"></script>
+  <script async="" defer="" type="module" src="/lib/write-triples.js"></script>
+  <script async="" defer="" type="module" src="/lib/graph-json-ld.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonld/1.0.0/jsonld.min.js"></script>
 </head>
 
 <body>
@@ -36,10 +39,51 @@
 
   <p>Using the very helpful <a href="https://github.com/digitalbazaar/jsonld.js">jsonld.js</a> package, we can transform that JSON-LD object into all sorts of useful things.</p>
 
+  <h3>
+    Cast to a Tree
+  </h3>
+
   <p>
-    <mark>More on this soon…</mark>
+    <a href="https://www.w3.org/TR/json-ld11-framing/">JSON-LD framing</a> is a method o defining a shape you want on your array of nodes. For instance, we could be interested in the Human and their Friends, and want a tree of those friendly relationships. Frames are a way to <a href="https://json-ld.org/playground/#startTab=tab-framed&json-ld=%7B%22%40context%22%3A%7B%22%40vocab%22%3A%22http%3A%2F%2Fexample.org%2F%22%2C%22contains%22%3A%7B%22%40type%22%3A%22%40id%22%7D%7D%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%22%2C%22%40type%22%3A%22Library%22%2C%22location%22%3A%22Athens%22%2C%22contains%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%22%7D%2C%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%22%2C%22%40type%22%3A%22Book%22%2C%22creator%22%3A%22Plato%22%2C%22title%22%3A%22The%20Republic%22%2C%22contains%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%23introduction%22%7D%2C%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%23introduction%22%2C%22%40type%22%3A%22Chapter%22%2C%22description%22%3A%22An%20introductory%20chapter%20on%20The%20Republic.%22%2C%22title%22%3A%22The%20Introduction%22%7D%5D%7D&frame=%7B%22%40context%22%3A%7B%22%40vocab%22%3A%22http%3A%2F%2Fexample.org%2F%22%7D%2C%22%40type%22%3A%22Library%22%2C%22contains%22%3A%7B%22%40type%22%3A%22Book%22%2C%22contains%22%3A%7B%22%40type%22%3A%22Chapter%22%7D%7D%7D">get those structures.</a>
   </p>
 
+  <h3>
+    Expand URIs
+  </h3>
+
+  <p>
+    The <code>@context</code> object in the JSON-LD is for <a href="https://json-ld.org/playground/#startTab=tab-expanded&json-ld=%7B%22%40context%22%3A%7B%22%40vocab%22%3A%22http%3A%2F%2Fexample.org%2F%22%2C%22contains%22%3A%7B%22%40type%22%3A%22%40id%22%7D%7D%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%22%2C%22%40type%22%3A%22Library%22%2C%22location%22%3A%22Athens%22%2C%22contains%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%22%7D%2C%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%22%2C%22%40type%22%3A%22Book%22%2C%22creator%22%3A%22Plato%22%2C%22title%22%3A%22The%20Republic%22%2C%22contains%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%23introduction%22%7D%2C%7B%22%40id%22%3A%22http%3A%2F%2Fexample.org%2Flibrary%2Fthe-republic%23introduction%22%2C%22%40type%22%3A%22Chapter%22%2C%22description%22%3A%22An%20introductory%20chapter%20on%20The%20Republic.%22%2C%22title%22%3A%22The%20Introduction%22%7D%5D%7D&frame=%7B%22%40context%22%3A%7B%22%40vocab%22%3A%22http%3A%2F%2Fexample.org%2F%22%7D%2C%22%40type%22%3A%22Library%22%2C%22contains%22%3A%7B%22%40type%22%3A%22Book%22%2C%22contains%22%3A%7B%22%40type%22%3A%22Chapter%22%7D%7D%7D">expanding the keys into full URIs.</a> It can also convert them back from full URIs to keys.
+  </p>
+
+  <h3>
+    Convert to Triples
+  </h3>
+
+  <p>
+    Lastly, JSON-LD is just a serialization of your classic <a href="https://en.wikipedia.org/wiki/Semantic_triple">semantic triple</a> statement that goes "subject predicate object." You can then stick these into a <a href="https://en.wikipedia.org/wiki/Triplestore">triplestore</a> and run <a href="https://en.wikipedia.org/wiki/SPARQL">complex graph queries</a> on em. I like <a href="https://github.com/oxigraph/oxigraph">Oxigraph.</a>
+  </p>
+
+  <rdfa-triples></rdfa-triples>
+
+  <h2>
+    Graph 'em!
+  </h2>
+
+  <p>
+    Now we can plug this in to a regular Observable or D3 network graph.
+  </p>
+
+  <rdfa-graph-jsonld></rdfa-graph-jsonld>
+
+  <p>There are a <a href="https://observablehq.com/@bstaats/graph-visualization-introduction">lot of rad ways to make graph network charts.</a> This is pulled from the <a href="https://observablehq.com/@d3/force-directed-graph-component">standard d3 Les Mis example.</a></p>
+
+  <h2>
+    The End
+  </h2>
+
+  <p>
+    Source for this project is <a href="https://github.com/stucco-software/very-simple-rdfa">on GitHub!</a>
+  </p>
 
 
 </body>
